@@ -28,4 +28,9 @@ int print_c(va_list chr);
 
 int print_s(va_list string);
 
+
+int print_d(va_list dec);
+
+int print_i(va_list decimal);
+
 #endif
