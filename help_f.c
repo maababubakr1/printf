@@ -3,19 +3,17 @@
 /**
 *format_checker - A function that checks for a format specifiers
 *@format: a character string that may contain a specifier
-*Return: A pointer to a specifier found (Succes
-s) or NULL (not found)
+*Return: A pointer to a specifier found or NULL
 */
 
 int (*format_checker(const char *format))(va_list)
 {
 	int n;
-	print_t s[] =
-		{
-			{"c", print_c},
-			{"s", print_s},
-			{NULL, NULL}
-		};
+	print_t s[] = {
+		{"c", print_c},
+		{"s", print_s},
+		{NULL, NULL}
+	};
 
 	for (n = 0; s[n].t != NULL; n++)
 	{

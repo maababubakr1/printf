@@ -14,9 +14,7 @@ int _printf(const char *format, ...)
 
 	if (format ==  NULL)
 		return (-1);
-
 	va_start(list, format);
-
 	while (format && format[m])
 	{
 		if (format[m] != '%')
@@ -27,25 +25,25 @@ int _printf(const char *format, ...)
 			continue;
 		}
 		else
-		     {
-			     if (format[m + 1] == '%')
-			     {
-				     _putchar('%');
-				     no++;
-				     m += 2;
-				     continue;
-			     }
-			     else
-			     {
-				     x = format_checker(&format[m + 1]);
+		{
+			if (format[m + 1] == '%')
+			{
+				_putchar('%');
+				no++;
+				m += 2;
+				continue;
+			}
+			else
+			{
+				x = format_checker(&format[m + 1]);
 
-				     if (x == NULL)
-					     return (-1);
-				     m +=2;
-				     no += x(list);
-				     continue;
-			     }
-		     }
+				if (x == NULL)
+					return (-1);
+				m += 2;
+				no += x(list);
+				continue;
+			}
+		}
 		no++;
 	}
 	va_end(list);

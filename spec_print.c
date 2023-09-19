@@ -9,6 +9,7 @@
 int print_c(va_list chr)
 {
 	char c = va_arg(chr, int);
+
 	_putchar(c);
 	return (1);
 }
@@ -24,7 +25,7 @@ int print_s(va_list string)
 	char *p = va_arg(string, char *);
 	int n = 0;
 
-	if(p == NULL)
+	if (p == NULL)
 		p = "(null)";
 	while (p[n])
 	{
